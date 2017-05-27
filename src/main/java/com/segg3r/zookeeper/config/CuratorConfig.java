@@ -6,11 +6,13 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource("classpath:configuration/zookeeper.properties")
+@ComponentScan("com.segg3r.zookeeper")
 public class CuratorConfig {
 
 	@Value("${zookeeper.connectionString}")
